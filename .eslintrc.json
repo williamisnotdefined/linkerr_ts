@@ -1,0 +1,59 @@
+{
+    "env": {
+        "browser": true,
+        "es2020": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+    "rules": {
+        "indent": "off",
+        "react/jsx-indent-props": 0,
+        "import/no-extraneous-dependencies": 0,
+        "semi": [2, "never"],
+        "prettier/prettier": "error",
+        "react/jsx-indent": 0,
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+        "import/prefer-default-export": "off",
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            { "ts": "never", "tsx": "never" }
+        ]
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {},
+            "alias": {
+                "map": [
+                    ["@public", "./public"],
+                    ["@app", "./src"],
+                    ["@components", "./src/components"],
+                    ["@containers", "./src/containers"],
+                    ["@helpers", "./src/helpers"],
+                    ["@images", "./src/images"],
+                    ["@pages", "./src/pages"],
+                    ["@routes", "./src/routes"],
+                    ["@services", "./src/services"],
+                    ["@styles", "./src/styles"]
+                ],
+                "extensions": [".ts", ".js", ".jsx", ".tsx", ".json"]
+            }
+        }
+    }
+}
