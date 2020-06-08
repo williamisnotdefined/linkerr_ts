@@ -1,12 +1,14 @@
 import { useEffect, useState, useCallback } from 'react'
 
-const _getSize = () => ({
+type windowSizeType = { width: number; height: number }
+
+const getWindowSize = (): windowSizeType => ({
     width: window.innerWidth,
     height: window.innerHeight
 })
 
-export default function useWindowSize() {
-    const getSize = useCallback(() => _getSize(), [])
+export default function useWindowSize(): windowSizeType {
+    const getSize = useCallback(() => getWindowSize(), [])
 
     const [windowSize, setWindowSize] = useState(getSize)
 
